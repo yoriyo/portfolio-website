@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- 1. Character Encoding -->
+    <meta charset="utf-8">
+    
+    <!-- 2. Responsive Viewport Settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 3. Page Title (Visible on the browser tab) -->
+    <title>Ilham's portfolio website</title>
+    
+    <!-- 4. Search Engine Optimization (SEO) -->
+    <meta name="description" content="Contains all about Ilham Rasyid Machfudi's all works">
+    
+    <!-- 5. Link to External Stylesheet (CSS) -->
+    <link rel="stylesheet" href="portfolio1.css">
+    
+    <!-- 6. Favicon (Browser tab icon) -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    
+    <!-- 7. External Javascript (Optional) -->
+    <script src="portfolio1.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <!-- SEARCH BAR INTERAKTIF -->
+        <form class="search-pill" id="searchForm">
+            <button type="submit" class="search-btn" aria-label="Cari">
+                <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <input type="text" id="searchInput" name="q" placeholder="Cari..." data-lang-placeholder="search" autocomplete="off">
+        </form>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active" data-lang-key="nav_home">Beranda</a>
+            <a href="about.html" data-lang-key="nav_about">Tentang Saya</a>
+            <a href="category.html" data-lang-key="nav_category">Kategori</a>
+        </nav>
+
+        <!-- PENGALIH BAHASA INTERAKTIF -->
+        <div class="lang-pill" id="langToggle">
+            <div class="lang-slider"></div>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn active" data-lang="id">ID</button>
+        </div>
+    </header>
+
+    <!-- ================= KONTEN UTAMA ================= -->
+    <main class="main-container">
+        
+        <!-- SECTION 1: CAROUSEL PREVIEW & SIDEBAR -->
+        <section class="top-section">
+            
+            <!-- Kolom Kiri: Banner Carousel Preview Utama -->
+            <div class="featured-card" id="carouselCard" title="Klik untuk membuka detail kegiatan">
+                <img id="carouselImg" src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=80" alt="Preview Kegiatan">
+                
+                <div class="featured-content">
+                    <a href="#" id="carouselTag" class="badge-tag">Bisnis</a>
+                    <h2 id="carouselTitle" class="featured-title">Singkat saja judul dari kegiatan Business</h2>
+                    
+                    <div class="dots-container" id="carouselDots">
+                        <button type="button" class="dot active" data-index="0" aria-label="Halaman 1"></button>
+                        <button type="button" class="dot" data-index="1" aria-label="Halaman 2"></button>
+                        <button type="button" class="dot" data-index="2" aria-label="Halaman 3"></button>
+                        <button type="button" class="dot" data-index="3" aria-label="Halaman 4"></button>
+                        <button type="button" class="dot" data-index="4" aria-label="Halaman 5"></button>
+                        <button type="button" class="dot" data-index="5" aria-label="Halaman 6"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Cek Portofolio Lainnya -->
+            <div class="side-portfolio">
+                <h2 class="section-title" data-lang-key="side_title">Cek Portofolio saya lainnya</h2>
+                
+                <div class="side-list">
+                    <!-- Konten 1: Business -->
+                    <article class="side-item">
+                        <a href="detail-business.html" class="side-thumb">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=200&q=80" alt="Thumbnail 1">
+                        </a>
+                        <div class="side-info">
+                            <a href="detail-business.html" class="side-text-link">
+                                <p data-lang-key="side_desc_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </a>
+                            <a href="category.html?tag=business" class="badge-dark" data-lang-key="tag_business">Bisnis</a>
+                        </div>
+                    </article>
+
+                    <!-- Konten 2: Nutrition -->
+                    <article class="side-item">
+                        <a href="detail-nutrition.html" class="side-thumb">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=200&q=80" alt="Thumbnail 2">
+                        </a>
+                        <div class="side-info">
+                            <a href="detail-nutrition.html" class="side-text-link">
+                                <p data-lang-key="side_desc_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </a>
+                            <a href="category.html?tag=nutrition" class="badge-dark" data-lang-key="tag_nutrition">Nutrisi</a>
+                        </div>
+                    </article>
+
+                    <!-- Konten 3: Study -->
+                    <article class="side-item">
+                        <a href="detail-study.html" class="side-thumb">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=200&q=80" alt="Thumbnail 3">
+                        </a>
+                        <div class="side-info">
+                            <a href="detail-study.html" class="side-text-link">
+                                <p data-lang-key="side_desc_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </a>
+                            <a href="category.html?tag=study" class="badge-dark" data-lang-key="tag_study">Studi</a>
+                        </div>
+                    </article>
+
+                    <!-- Konten 4: Economy -->
+                    <article class="side-item">
+                        <a href="detail-economy.html" class="side-thumb">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=200&q=80" alt="Thumbnail 4">
+                        </a>
+                        <div class="side-info">
+                            <a href="detail-economy.html" class="side-text-link">
+                                <p data-lang-key="side_desc_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </a>
+                            <a href="category.html?tag=economy" class="badge-dark" data-lang-key="tag_economy">Ekonomi</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ARTIKEL TAMBAHAN -->
+        <section class="articles-section">
+            <h2 class="section-title" data-lang-key="articles_title">Artikel Tambahan</h2>
+
+            <div class="articles-grid">
+                <!-- Kolom Kiri -->
+                <div class="articles-column">
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=200&q=80" alt="Artikel 1">
+                        <div class="article-info">
+                            <p data-lang-key="article_desc_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="article-1.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=200&q=80" alt="Artikel 2">
+                        <div class="article-info">
+                            <p data-lang-key="article_desc_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="article-2.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=200&q=80" alt="Artikel 3">
+                        <div class="article-info">
+                            <p data-lang-key="article_desc_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="article-3.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Kolom Kanan -->
+                <div class="articles-column">
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Artikel 4">
+                        <div class="article-info">
+                            <p data-lang-key="article_desc_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="article-4.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Artikel 5">
+                        <div class="article-info">
+                            <p data-lang-key="article_desc_5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="article-5.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Artikel 6">
+                        <div class="article-info">
+                            <p data-lang-key="article_desc_6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="article-6.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>&copy; 2026</p>
+    </footer>
+
+</body>
+</html>

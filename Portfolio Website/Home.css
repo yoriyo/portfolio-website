@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Mendorong logo ke kiri & link ke kanan */
+  align-items: center;            /* Menyejajarkan elemen tepat di tengah vertikal */
+  padding: 1.5em 8em;             /* 1.5em atas-bawah, 8em kanan-kiri */
+  width: 100%;
+}
+
+/* Style logo lingkaran */
+#logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Style daftar link navigasi */
+.nav-links {
+  display: flex;
+  gap: 2em;                       /* Jarak antar teks Home, About Me, Works */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+.sambutan-hero {
+  /* Menyamakan padding kiri-kanan dengan navbar agar lurus sejajar */
+  padding: 4em 8em 2em 8em; /* 4em atas, 8em kanan, 2em bawah, 8em kiri */
+  font-family: sans-serif;  /* Gunakan font yang sesuai dengan navbar */
+}
+
+#sambutan {
+  font-size: 3.5rem;        /* Membuat ukuran "Welcome" cukup besar */
+  font-weight: 700;         /* Membuat teks tebal */
+  color: #111;              /* Warna teks hitam pekat/kontras */
+  line-height: 1.1;         /* Merapatkan jarak baris agar tidak terlalu renggang */
+  margin-bottom: 0.5rem;    /* Jarak antara "Welcome" dan teks di bawahnya */
+}
+
+#ajakan {
+  font-size: 1.1rem;        /* Ukuran teks deskripsi normal/sedang */
+  font-weight: 400;         /* Ketebalan reguler */
+  color: #555;              /* Sedikit lebih abu-abu agar ada kontras hierarki */
+}
+
+/* Layout grid 3 kolom */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom sama rata */
+  gap: 2.5em 2em;                        /* Jarak antar project (baris dan kolom) */
+  padding: 2em 8em 6em 8em;              /* Padding kiri-kanan 8em sejajar dengan navbar */
+  font-family: sans-serif;
+}
+
+/* Gambar project */
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;                  /* Memastikan rasio gambar seragam */
+  object-fit: cover;
+  display: block;
+}
+
+/* Pembungkus teks info */
+.projectinfo {
+  margin-top: 0.75rem;                   /* Jarak dari gambar ke teks */
+}
+
+/* Tag / Label Project 1, 2, dst. */
+.project-tag {
+  font-size: 0.85rem;
+  color: #777;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Judul Project */
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.2rem;
+}
+
+/* Deskripsi Project */
+.project-desc {
+  font-size: 0.85rem;
+  color: #777;
+}

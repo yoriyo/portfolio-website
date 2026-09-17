@@ -1,0 +1,469 @@
+/* =========================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #222;
+    background-color: #ffffff;
+    line-height: 1.4;
+    padding-bottom: 40px;
+}
+
+/* Transisi teks saat bahasa diganti */
+[data-lang-key] {
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* =========================================
+   2. NAVBAR & LANGUAGE TOGGLE
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.search-pill {
+    display: flex;
+    align-items: center;
+    background-color: #d8edf7;
+    padding: 8px 16px;
+    border-radius: 25px;
+    gap: 8px;
+}
+
+.search-pill input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    color: #4a6b82;
+    width: 80px;
+}
+
+.search-pill input::placeholder {
+    color: #4a6b82;
+}
+
+.search-icon {
+    color: #4a6b82;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #4a6b82;
+}
+
+.nav-links {
+    display: flex;
+    gap: 36px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #1a73e8;
+}
+
+/* Language Switcher Interaktif */
+/* =========================================
+   PENGALIH BAHASA RINGKAS (EN / ID)
+   ========================================= */
+.lang-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background-color: #d8edf7;
+    padding: 3px;
+    border-radius: 20px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Kotak gradasi peluncur */
+.lang-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(50% - 3px);
+    height: calc(100% - 6px);
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1a73e8 0%, #00b4d8 100%);
+    box-shadow: 0 2px 6px rgba(26, 115, 232, 0.35);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.35s ease;
+    z-index: 1;
+}
+
+/* Tombol teks EN dan ID */
+.lang-btn {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;          /* Lebar konsisten agar slider pas simetris */
+    padding: 5px 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #4a6b82;
+    transition: color 0.3s ease;
+}
+
+.lang-btn.active {
+    color: #ffffff;
+}
+
+/* Posisi slider saat opsi ID aktif */
+.lang-pill.id-active .lang-slider {
+    transform: translateX(100%);
+    background: linear-gradient(135deg, #e63946 0%, #ff758f 100%);
+    box-shadow: 0 2px 6px rgba(230, 57, 70, 0.35);
+}
+
+/* =========================================
+   3. LAYOUT & SECTIONS
+   ========================================= */
+.main-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 10px 48px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+.top-section {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 36px;
+    margin-bottom: 48px;
+}
+
+/* =========================================
+   CAROUSEL PREVIEW STYLES
+   ========================================= */
+.featured-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 380px;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    user-select: none;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.featured-title,
+#carouselTag {
+    transition: opacity 300ms ease-out;
+}
+
+.featured-card:hover img {
+    transform: scale(1.02);
+}
+
+.featured-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
+    color: #ffffff;
+    z-index: 2;
+}
+
+/* =========================================
+   STYLE BADGE / TAG (HERO & SIDEBAR)
+   ========================================= */
+.badge-tag,
+#carouselTag {
+    display: inline-block;
+    padding: 3px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #ffffff !important;
+    text-decoration: none;
+    background-color: transparent;
+    width: fit-content;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.badge-tag:hover,
+#carouselTag:hover {
+    background-color: #ffffff;
+    color: #111111 !important;
+}
+
+.badge-dark {
+    display: inline-block;
+    padding: 2px 10px;
+    border: 1px solid #b0b0b0;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #555555;
+    text-decoration: none;
+    background-color: transparent;
+    margin-top: 0;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.badge-dark:hover,
+.badge-dark:focus,
+.badge-dark:active {
+    color: #555555;
+    text-decoration: none;
+}
+
+.featured-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dot.active {
+    background-color: #ffffff;
+    transform: scale(1.25);
+}
+
+/* =========================================
+   SIDEBAR PORTOFOLIO DENGAN DIVIDER & FIT HEIGHT
+   ========================================= */
+.side-portfolio {
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-portfolio .section-title {
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.side-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.side-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid #e8e8e8;
+    min-height: 0;
+}
+
+.side-item:last-child {
+    border-bottom: none;
+}
+
+.side-thumb {
+    display: block;
+    flex-shrink: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.side-thumb img {
+    width: 78px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.side-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.side-text-link {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.side-text-link p {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.articles-section {
+    margin-top: 24px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.articles-column:first-child {
+    border-right: 1px solid #e0e0e0;
+    padding-right: 40px;
+}
+
+.articles-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.article-card img {
+    width: 140px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   ARTIKEL TAMBAHAN (CLICK TO SEE MORE)
+   ========================================= */
+.article-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.article-info p {
+    font-size: 12px;
+    color: #222222;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.btn-more {
+    font-size: 11px;
+    color: #8c8c8c;
+    text-decoration: none;
+    width: fit-content;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.btn-more:hover {
+    color: #333333;
+}
+
+.btn-more:active {
+    color: #111111;
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 13px;
+    color: #444;
+}
+
+/* =========================================
+   4. RESPONSIVE MEDIA QUERIES
+   ========================================= */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 16px 20px;
+    }
+    
+    .main-container {
+        max-width: 1400px;       /* Diubah dari 1320px agar sama persis dengan navbar */
+        margin: 0 auto;          /* Posisi tetap otomatis di tengah layar */
+        padding: 10px 48px;      /* Jarak kiri-kanan (48px) sudah presisi dengan navbar */
+    }
+
+    .top-section {
+        grid-template-columns: 1fr;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .articles-column:first-child {
+        border-right: none;
+        padding-right: 0;
+    }
+}
