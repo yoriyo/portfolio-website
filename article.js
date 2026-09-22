@@ -181,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnLike) {
         btnLike.addEventListener('click', () => {
+            // Toggle class 'liked': menambahkan jika belum ada, menghapus jika sudah ada
             btnLike.classList.toggle('liked');
         });
     }

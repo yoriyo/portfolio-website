@@ -130,28 +130,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #222222;
-    transition: transform 0.15s ease, color 0.15s ease;
-}
-
-.action-btn:hover {
-    transform: scale(1.15);
+    color: #222222; /* Warna stroke dasar */
+    transition: transform 0.15s ease;
 }
 
 .action-icon {
     width: 24px;
     height: 24px;
     display: block;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Warna saat tombol suka (like) aktif */
-.action-btn.liked {
-    color: #e63946;
+/* Kondisi Awal: Ikon Hati Kopong (Hanya Outline) */
+.icon-heart {
+    fill: none;
+    stroke: currentColor;
+    transition: fill 0.2s ease;
 }
 
+/* Kondisi Disukai (Liked): Terisi Penuh dengan Warna yang Sama dengan Stroke */
 .action-btn.liked .icon-heart {
-    fill: #e63946;
-    stroke: #e63946;
+    fill: currentColor; /* Terisi penuh mengikuti warna garis (#222222) */
+    transform: scale(1.15); /* Efek membal / pop sesaat saat ditekan */
 }
 
 /* ==========================================================================
