@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <!-- 1. Character Encoding -->
     <meta charset="utf-8">
-    
-    <!-- 2. Responsive Viewport Settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 3. Page Title (Visible on the browser tab) -->
     <title>Ilham's portfolio website</title>
-    
-    <!-- 4. Search Engine Optimization (SEO) -->
     <meta name="description" content="Contains all about Ilham Rasyid Machfudi's all works">
     
-    <!-- 5. Link to External Stylesheet (CSS) -->
-    <link rel="stylesheet" href="portfolio1.css">
-    
-    <!-- 6. Favicon (Browser tab icon) -->
+    <!-- 1. Muat Google Font Open Sans agar seragam dengan article.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- 2. Perbaikan nama file CSS sesuai berkas lokal -->
+    <link rel="stylesheet" href="home.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- 7. External Javascript (Optional) -->
-    <script src="portfolio1.js" defer></script>
+    <!-- 3. Perbaikan nama file JS sesuai berkas lokal -->
+    <script src="home.js" defer></script>
 
-    <!-- 8. Database Firebase -->
+    <!-- 4. Modul Database Firebase -->
     <script type="module" src="firebase-init.js"></script>
 </head>
 <body>
 
-    <!-- ================= NAVBAR ================= -->
     <header class="navbar">
-        <!-- SEARCH BAR INTERAKTIF -->
         <form class="search-pill" id="searchForm">
             <button type="submit" class="search-btn" aria-label="Cari">
                 <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -46,8 +40,8 @@
             <a href="category.html" data-lang-key="nav_category">Kategori</a>
         </nav>
 
-        <!-- PENGALIH BAHASA INTERAKTIF -->
-        <div class="lang-pill" id="langToggle">
+        <!-- Tambahkan id-active di HTML agar slider langsung di posisi ID tanpa kedip -->
+        <div class="lang-pill id-active" id="langToggle">
             <div class="lang-slider"></div>
             <button type="button" class="lang-btn" data-lang="en">EN</button>
             <button type="button" class="lang-btn active" data-lang="id">ID</button>
@@ -139,7 +133,7 @@
             </div>
         </section>
 
-        <!-- SECTION 2: ARTIKEL TAMBAHAN -->
+<!-- SECTION 2: ARTIKEL TAMBAHAN -->
         <section class="articles-section">
             <h2 class="section-title" data-lang-key="articles_title">Artikel Tambahan</h2>
 
@@ -150,7 +144,7 @@
                         <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=200&q=80" alt="Artikel 1">
                         <div class="article-info">
                             <p data-lang-key="article_desc_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="article-1.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                            <a href="article.html?id=1" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
                         </div>
                     </article>
 
@@ -158,7 +152,7 @@
                         <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=200&q=80" alt="Artikel 2">
                         <div class="article-info">
                             <p data-lang-key="article_desc_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="article-2.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                            <a href="article.html?id=2" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
                         </div>
                     </article>
 
@@ -166,7 +160,7 @@
                         <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=200&q=80" alt="Artikel 3">
                         <div class="article-info">
                             <p data-lang-key="article_desc_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="article-3.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                            <a href="article.html?id=3" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
                         </div>
                     </article>
                 </div>
@@ -177,7 +171,7 @@
                         <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Artikel 4">
                         <div class="article-info">
                             <p data-lang-key="article_desc_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="article-4.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                            <a href="article.html?id=4" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
                         </div>
                     </article>
 
@@ -185,7 +179,7 @@
                         <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Artikel 5">
                         <div class="article-info">
                             <p data-lang-key="article_desc_5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="article-5.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                            <a href="article.html?id=5" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
                         </div>
                     </article>
 
@@ -193,7 +187,7 @@
                         <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Artikel 6">
                         <div class="article-info">
                             <p data-lang-key="article_desc_6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="article-6.html" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
+                            <a href="article.html?id=6" class="btn-more" data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
                         </div>
                     </article>
                 </div>

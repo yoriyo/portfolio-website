@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Artikel - Ilham's Website</title>
+
+    <!-- 1. Google Font: Open Sans (Ketentuan 1) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet khusus halaman artikel -->
+    <link rel="stylesheet" href="article.css">
+
+    <!-- Script logika dinamis & interaksi -->
+    <script src="article.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= FLOATING ITEMS (TERKUNCI VERTIKAL) ================= -->
+    <!-- Table of Contents (TOC) di Margin Kiri (Ketentuan 12) -->
+    <aside class="floating-toc" id="floatingToc" aria-label="Daftar Isi">
+        <div class="toc-lines" title="Table of Contents">
+            <span class="toc-line line-1"></span>
+            <span class="toc-line line-2"></span>
+            <span class="toc-line line-3"></span>
+            <span class="toc-line line-4"></span>
+        </div>
+    </aside>
+
+    <!-- Tombol Reaksi di Margin Kanan (Ketentuan 12 & 13) -->
+    <aside class="floating-actions" aria-label="Aksi Artikel">
+        <!-- Ikon Hati / Like -->
+        <button type="button" class="action-btn" id="btnLike" aria-label="Sukai artikel">
+            <svg class="action-icon icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+        </button>
+
+        <!-- Ikon Komentar -->
+        <button type="button" class="action-btn" id="btnComment" aria-label="Komentar">
+            <svg class="action-icon icon-comment" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </aside>
+
+    <!-- ================= KONTEN UTAMA DENGAN GRID 12 KOLOM ================= -->
+    <main class="article-layout">
+
+        <!-- 1. Breadcrumb (Pojok Kiri Atas - Ketentuan 2 & 3) -->
+        <nav class="breadcrumb-container" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator">&gt;</li>
+                <li><a href="category.html?tag=nutrition" id="articleCategory">Nutrition</a></li>
+                <li class="separator">&gt;</li>
+                <li class="current" id="breadcrumbTitle" aria-current="page">Asupan selama 15 hari wor.....</li>
+            </ol>
+        </nav>
+
+        <!-- 2. Area Artikel (Kolom 4 sampai 10) -->
+        <article class="article-core">
+            
+            <!-- Judul Artikel (Ketentuan 4 & 9) -->
+            <h1 class="article-title" id="articleTitle">
+                lorem ipsum dolor sit amet consectetur adipiscing elit placeat id est non ut laboris odio
+            </h1>
+
+            <!-- Garis Pembagi (Ketentuan 5 & 6) -->
+            <hr class="article-divider">
+
+            <!-- Meta: Tanggal & Waktu Baca (Ketentuan 6, 7 & 10) -->
+            <div class="article-meta">
+                <span class="meta-date" id="articleDate">DD/MM/YYYY</span>
+                <span class="meta-reading-time" id="articleReadTime">7 mins to read</span>
+            </div>
+
+            <!-- Isi Artikel (Ketentuan 7 & 8) -->
+            <div class="article-body" id="articleBody">
+                <p>
+                    lorem ipsum dolor sit amet consectetur adipiscing elit dolorum enim quas in nisi libero 
+                    accusamus facilis in cupiditate aut culpa expedita officia cumque qui exercitation nobis quo rerum 
+                    qui ipsum irure id aut mollit ut expedita duis occaecat qui exercitation anim officia esse ut cupiditate 
+                    vero do optio deserunt irure sed optio anim autem blanditiis similique est occaecat voluptatum 
+                    molestias nam eiusmod voluptate est libero omnis ullamco elit ullamco esse pariatur aliqua aliqua 
+                    et at in deserunt dolor ad eos aliquip nisi tempor illum in quis omnis deserunt duis ducimus irure sunt 
+                    excepteur et sunt irure est tempore deserunt blanditiis dolorum officia quas ut ea sint in et placeat 
+                    sunt adipiscing velit aliqua minus consequat possimus sunt dolorum omnis laboris minim dolorum 
+                    tempor incididunt deserunt exercitation eligendi velit assumenda laboris anim facere et quas dolor 
+                    animi eos in aliqua quis provident mollitia esse nulla id possimus praesentium rerum commodo 
+                    ullamco pariatur consequat dolor irure occaecat accusamus aut non culpa commodo qui imperdiet 
+                    dignissimos mollitia accusamus quas non voluptas officia nostrud sit nobis et imperdiet dolore 
+                    temporibus dolore laborum culpa incididunt libero velit odio quas dolor voluptas molestias ad cum 
+                    occaecat eos qui est et soluta dolore fuga aut aute eos illum eu excepteur sint est occaecat 
+                    accusamus enim duis deleniti consequat est ad similique rerum est molestias nisi irure quibusdam 
+                    magna et dolor facilis autem autem nisi quo rerum nihil anim deserunt culpa nulla ad fugiat 
+                    velit animi pariatur fuga quidem incididunt excepteur irure occaecat non adipiscing est qui
+                </p>
+
+                <!-- Gambar dalam Artikel (Ketentuan 8) -->
+                <figure class="article-figure">
+                    <img id="articleImage" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80" alt="Ilustrasi Artikel">
+                </figure>
+
+                <p>
+                    lorem ipsum dolor sit amet consectetur adipiscing elit dolorum enim quas in nisi libero 
+                    accusamus facilis in cupiditate aut culpa expedita officia cumque qui exercitation nobis quo rerum 
+                    qui ipsum irure id aut mollit ut expedita duis occaecat qui exercitation anim officia esse ut cupiditate 
+                    vero do optio deserunt irure sed optio anim autem blanditiis similique est occaecat voluptatum 
+                    molestias nam eiusmod voluptate est libero omnis ullamco elit ullamco esse pariatur aliqua aliqua.
+                </p>
+            </div>
+
+        </article>
+
+        <!-- 3. Author Badge di Sisi Kiri (Ketentuan 14, 15, 16, 17, 18) -->
+        <aside class="author-container">
+            <div class="author-badge">
+                <div class="author-avatar" id="authorAvatar"></div>
+                <span class="author-name" id="authorName">Author's name</span>
+            </div>
+        </aside>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+/* ==========================================================================
+   1. RESET & DASAR TIPOGRAFI (OPEN SANS)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #111111;
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. VARIABEL TATA LETAK DINAMIS & RESPONSIF
+   ========================================================================== */
+:root {
+    /* Ketentuan 11: Margin kanan-kiri 40px, 12 Kolom, Gutter 20px */
+    --page-margin: 40px;
+    --grid-gutter: 20px;
+    --max-content-width: 1440px;
+
+    /* Kalkulasi 1 lebar kolom secara otomatis di semua ukuran layar desktop */
+    --column-width: calc((min(100vw, var(--max-content-width)) - (2 * var(--page-margin)) - (11 * var(--grid-gutter))) / 12);
+
+    /* Baseline: Desktop (> 1366px) */
+    --space-top-breadcrumb: 40px;      /* Ketentuan 3 */
+    --space-breadcrumb-title: 30px;    /* Ketentuan 4 */
+    --space-title-divider: 13px;       /* Ketentuan 5 */
+    --space-divider-meta: 8px;         /* Ketentuan 6 */
+    --space-meta-body: 32px;           /* Ketentuan 7 */
+    --space-body-image: 16px;          /* Ketentuan 8 */
+
+    --font-breadcrumb: 12px;           /* Ketentuan 2 */
+    --font-title: 28px;                /* Ketentuan 9 */
+    --font-meta: 12px;                 /* Ketentuan 10 */
+    --font-author: 14px;               /* Ketentuan 17 */
+
+    --author-height: 36px;             /* Ketentuan 15 */
+    --author-avatar-size: 32px;        /* Ketentuan 16 */
+    --author-gap: 12px;                /* Ketentuan 18 */
+}
+
+/* Penyesuaian Dinamis untuk Layar Laptop / MacBook Air (<= 1366px) */
+@media (max-width: 1366px) {
+    :root {
+        --space-top-breadcrumb: 24px;   /* Ketentuan 3 */
+        --space-title-divider: 8px;     /* Ketentuan 5 */
+
+        --font-breadcrumb: 10px;        /* Ketentuan 2 */
+        --font-title: 24px;             /* Ketentuan 9 */
+        --font-meta: 10px;              /* Ketentuan 10 */
+        --font-author: 12px;            /* Ketentuan 17 */
+
+        --author-avatar-size: 28px;     /* Ketentuan 16 */
+    }
+}
+
+/* ==========================================================================
+   3. FLOATING ELEMENTS (TERKUNCI DI TENGAH VERTIKAL / FIXED)
+   ========================================================================== */
+
+/* TOC di Margin Kiri (Ketentuan 12) */
+.floating-toc {
+    position: fixed;
+    left: max(var(--page-margin), calc((100vw - var(--max-content-width)) / 2 + var(--page-margin)));
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    cursor: pointer;
+}
+
+.toc-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.toc-line {
+    display: block;
+    height: 1.5px;
+    background-color: #888888;
+    border-radius: 2px;
+}
+
+.toc-line.line-1 { width: 52px; }
+.toc-line.line-2 { width: 42px; }
+.toc-line.line-3 { width: 36px; }
+.toc-line.line-4 { width: 52px; }
+
+/* Ikon Hati & Komentar di Margin Kanan (Ketentuan 12 & 13) */
+.floating-actions {
+    position: fixed;
+    right: max(var(--page-margin), calc((100vw - var(--max-content-width)) / 2 + var(--page-margin)));
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Ketentuan 13 */
+    z-index: 100;
+}
+
+.action-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222222;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.15);
+}
+
+.action-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.action-btn.liked {
+    color: #e63946;
+}
+.action-btn.liked svg {
+    fill: #e63946;
+}
+
+/* ==========================================================================
+   4. STRUKTUR GRID UTAMA 12 KOLOM (FLUID)
+   ========================================================================== */
+.article-layout {
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 var(--page-margin) 100px var(--page-margin);
+
+    /* Grid 12 Kolom yang otomatis mengecil/membesar secara luwes */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter);
+    row-gap: 0;
+}
+
+/* ==========================================================================
+   5. BREADCRUMB
+   ========================================================================== */
+.breadcrumb-container {
+    grid-column: 1 / -1;
+    margin-top: var(--space-top-breadcrumb);
+    margin-bottom: var(--space-breadcrumb-title);
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 8px;
+    font-size: var(--font-breadcrumb);
+    color: #555555;
+}
+
+.breadcrumb-list a {
+    text-decoration: none;
+    color: #444444;
+    transition: color 0.2s;
+}
+
+.breadcrumb-list a:hover {
+    color: #1a73e8;
+}
+
+.breadcrumb-list .separator {
+    color: #999999;
+}
+
+.breadcrumb-list .current {
+    color: #222222;
+    font-weight: 500;
+    cursor: default;
+}
+
+/* ==========================================================================
+   6. AREA ARTIKEL (KOLOM 4 SAMPAI 11)
+   ========================================================================== */
+.article-core {
+    grid-column: 4 / 11;
+}
+
+/* Judul Artikel */
+.article-title {
+    font-size: var(--font-title);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.25;
+    margin-bottom: var(--space-title-divider);
+}
+
+/* Garis Pembagi */
+.article-divider {
+    border: none;
+    border-top: 1px solid #dcdcdc;
+    margin: 0 0 var(--space-divider-meta) 0;
+}
+
+/* Meta Informasi */
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: var(--font-meta);
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: var(--space-meta-body);
+}
+
+/* Paragraf & Gambar */
+.article-body p {
+    font-size: 13px;
+    color: #222222;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.article-figure {
+    margin: var(--space-body-image) 0;
+    width: 100%;
+}
+
+.article-figure img {
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   7. AUTHOR BADGE (TERKUNCI SECARA VERTIKAL / FIXED)
+   ========================================================================== */
+.author-container {
+    position: fixed;
+    /* Selalu rata kiri lurus dengan kolom grid artikel di resolusi mana pun */
+    left: max(var(--page-margin), calc((100vw - var(--max-content-width)) / 2 + var(--page-margin)));
+    bottom: 40px;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+}
+
+.author-badge {
+    /* Lebar minimal mengikuti 1 kolom dinamis */
+    min-width: var(--column-width);
+    width: fit-content;
+    height: var(--author-height);
+    background-color: #d9d9d9;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px 0 4px;
+    gap: var(--author-gap);
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.author-avatar {
+    width: var(--author-avatar-size);
+    height: var(--author-avatar-size);
+    border-radius: 50%;
+    background-color: #9e9e9e;
+    flex-shrink: 0;
+}
+
+.author-name {
+    font-size: var(--font-author);
+    font-weight: 500;
+    color: #222222;
+    white-space: nowrap;
+}
