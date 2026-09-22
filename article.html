@@ -18,30 +18,27 @@
 </head>
 <body>
 
-    <!-- ================= FLOATING ITEMS (TERKUNCI VERTIKAL) ================= -->
-    <!-- Table of Contents (TOC) di Margin Kiri (Ketentuan 12) -->
-    <aside class="floating-toc" id="floatingToc" aria-label="Daftar Isi">
-        <div class="toc-lines" title="Table of Contents">
-            <span class="toc-line line-1"></span>
-            <span class="toc-line line-2"></span>
-            <span class="toc-line line-3"></span>
-            <span class="toc-line line-4"></span>
-        </div>
+<!-- ================= FLOATING ITEMS ================= -->
+    <!-- 1. Table of Contents (TOC) Dinamis di Margin Kiri -->
+    <aside class="floating-toc" id="floatingToc" aria-label="Table of Contents">
+        <!-- Garis bab akan digenerate otomatis oleh JavaScript jika bab >= 3 -->
     </aside>
 
-    <!-- Tombol Reaksi di Margin Kanan (Ketentuan 12 & 13) -->
+    <!-- 2. Tombol Reaksi di Margin Kanan (SVG Baru) -->
     <aside class="floating-actions" aria-label="Aksi Artikel">
-        <!-- Ikon Hati / Like -->
+        <!-- Ikon Hati -->
         <button type="button" class="action-btn" id="btnLike" aria-label="Sukai artikel">
             <svg class="action-icon icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
         </button>
 
-        <!-- Ikon Komentar -->
+        <!-- Ikon Komentar (Sesuai File SVG Baru: Balon Kotak + 2 Garis) -->
         <button type="button" class="action-btn" id="btnComment" aria-label="Komentar">
             <svg class="action-icon icon-comment" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <line x1="7.5" y1="8.5" x2="16.5" y2="8.5"></line>
+                <line x1="7.5" y1="12.5" x2="13.5" y2="12.5"></line>
             </svg>
         </button>
     </aside>
@@ -77,39 +74,28 @@
                 <span class="meta-reading-time" id="articleReadTime">7 mins to read</span>
             </div>
 
-            <!-- Isi Artikel (Ketentuan 7 & 8) -->
+            <!-- Isi Artikel dengan Sub-bab (h2) -->
             <div class="article-body" id="articleBody">
+                <h2 class="article-heading">Bab 1: Pola Makan Seimbang</h2>
                 <p>
-                    lorem ipsum dolor sit amet consectetur adipiscing elit dolorum enim quas in nisi libero 
-                    accusamus facilis in cupiditate aut culpa expedita officia cumque qui exercitation nobis quo rerum 
-                    qui ipsum irure id aut mollit ut expedita duis occaecat qui exercitation anim officia esse ut cupiditate 
-                    vero do optio deserunt irure sed optio anim autem blanditiis similique est occaecat voluptatum 
-                    molestias nam eiusmod voluptate est libero omnis ullamco elit ullamco esse pariatur aliqua aliqua 
-                    et at in deserunt dolor ad eos aliquip nisi tempor illum in quis omnis deserunt duis ducimus irure sunt 
-                    excepteur et sunt irure est tempore deserunt blanditiis dolorum officia quas ut ea sint in et placeat 
-                    sunt adipiscing velit aliqua minus consequat possimus sunt dolorum omnis laboris minim dolorum 
-                    tempor incididunt deserunt exercitation eligendi velit assumenda laboris anim facere et quas dolor 
-                    animi eos in aliqua quis provident mollitia esse nulla id possimus praesentium rerum commodo 
-                    ullamco pariatur consequat dolor irure occaecat accusamus aut non culpa commodo qui imperdiet 
-                    dignissimos mollitia accusamus quas non voluptas officia nostrud sit nobis et imperdiet dolore 
-                    temporibus dolore laborum culpa incididunt libero velit odio quas dolor voluptas molestias ad cum 
-                    occaecat eos qui est et soluta dolore fuga aut aute eos illum eu excepteur sint est occaecat 
-                    accusamus enim duis deleniti consequat est ad similique rerum est molestias nisi irure quibusdam 
-                    magna et dolor facilis autem autem nisi quo rerum nihil anim deserunt culpa nulla ad fugiat 
-                    velit animi pariatur fuga quidem incididunt excepteur irure occaecat non adipiscing est qui
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolorum enim quas in nisi libero 
+                    accusamus facilis in cupiditate aut culpa expedita officia cumque qui exercitation nobis.
                 </p>
 
-                <!-- Gambar dalam Artikel (Ketentuan 8) -->
                 <figure class="article-figure">
                     <img id="articleImage" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80" alt="Ilustrasi Artikel">
                 </figure>
 
+                <h2 class="article-heading">Bab 2: Kebutuhan Hidrasi Harian</h2>
                 <p>
-                    lorem ipsum dolor sit amet consectetur adipiscing elit dolorum enim quas in nisi libero 
-                    accusamus facilis in cupiditate aut culpa expedita officia cumque qui exercitation nobis quo rerum 
-                    qui ipsum irure id aut mollit ut expedita duis occaecat qui exercitation anim officia esse ut cupiditate 
-                    vero do optio deserunt irure sed optio anim autem blanditiis similique est occaecat voluptatum 
-                    molestias nam eiusmod voluptate est libero omnis ullamco elit ullamco esse pariatur aliqua aliqua.
+                    Vero do optio deserunt irure sed optio anim autem blanditiis similique est occaecat voluptatum 
+                    molestias nam eiusmod voluptate est libero omnis ullamco elit ullamco esse pariatur aliqua.
+                </p>
+
+                <h2 class="article-heading">Bab 3: Istirahat dan Pemulihan</h2>
+                <p>
+                    Temporibus dolore laborum culpa incididunt libero velit odio quas dolor voluptas molestias 
+                    ad cum occaecat eos qui est et soluta dolore fuga aut aute eos illum eu excepteur sint.
                 </p>
             </div>
 

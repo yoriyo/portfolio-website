@@ -90,51 +90,88 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleDate = document.getElementById('articleDate');
     const articleReadTime = document.getElementById('articleReadTime');
 
-    /**
-     * Fungsi untuk memperbarui breadcrumb dan header artikel
-     * @param {string} categoryName - Nama kategori (misal: "Nutrition")
-     * @param {string} categorySlug - Slug URL (misal: "nutrition")
-     * @param {string} titleText    - Judul artikel
-     * @param {string} dateText     - Tanggal rilis (opsional)
-     * @param {string} readTimeText - Estimasi waktu baca (opsional)
-     */
     function setArticleData(categoryName, categorySlug, titleText, dateText = null, readTimeText = null) {
-        // 1. Kategori di breadcrumb (bisa diklik ke halaman kategori)
         if (categoryLink) {
             categoryLink.textContent = categoryName;
             categoryLink.href = `category.html?tag=${encodeURIComponent(categorySlug)}`;
         }
-
-        // 2. Judul di breadcrumb (statis, tidak bisa diklik)
-        if (breadcrumbTitle) {
-            breadcrumbTitle.textContent = titleText;
-        }
-
-        // 3. Judul utama artikel
-        if (articleTitle) {
-            articleTitle.textContent = titleText;
-        }
-
-        // 4. Meta tanggal & waktu baca (jika disertakan)
-        if (dateText && articleDate) {
-            articleDate.textContent = dateText;
-        }
-        if (readTimeText && articleReadTime) {
-            articleReadTime.textContent = readTimeText;
-        }
+        if (breadcrumbTitle) breadcrumbTitle.textContent = titleText;
+        if (articleTitle) articleTitle.textContent = titleText;
+        if (dateText && articleDate) articleDate.textContent = dateText;
+        if (readTimeText && articleReadTime) articleReadTime.textContent = readTimeText;
     }
 
     // ==========================================================================
-    // 2. MEMBACA PARAMETER URL (?id=...) DARI LINK SEBELUMNYA
+    // 2. SISTEM TABLE OF CONTENTS (TOC) DINAMIS & INTERAKTIF
     // ==========================================================================
-    const urlParams = new URLSearchParams(window.location.search);
-    const articleId = urlParams.get('id');
+    function renderTableOfContents() {
+        const floatingToc = document.getElementById('floatingToc');
+        const articleBody = document.getElementById('articleBody');
+        if (!floatingToc || !articleBody) return;
 
-    if (articleId) {
-        console.log(`Membuka artikel dengan ID: ${articleId}`);
-        // Saat Firebase Firestore aktif, panggil datanya di sini lalu jalankan:
-        // setArticleData(data.category, data.categorySlug, data.title, data.date, data.readTime);
+        // Ambil semua sub-bab (h2)
+        const headings = articleBody.querySelectorAll('h2');
+
+        // Ketentuan: Garis hanya muncul jika bab >= 3
+        if (headings.length < 3) {
+            floatingToc.style.display = 'none';
+            return;
+        }
+
+        // Tampilkan wadah TOC
+        floatingToc.style.display = 'flex';
+        floatingToc.innerHTML = '';
+
+        headings.forEach((heading, index) => {
+            // Beri ID unik ke tiap bab jika belum ada
+            if (!heading.id) {
+                heading.id = `bab-${index + 1}`;
+            }
+
+            // Buat tombol garis panjang
+            const tocBtn = document.createElement('button');
+            tocBtn.type = 'button';
+            tocBtn.className = 'toc-btn';
+            tocBtn.title = heading.textContent; // Muncul tooltip nama bab saat kursor diarahkan
+            tocBtn.setAttribute('aria-label', `Pindah ke ${heading.textContent}`);
+
+            const line = document.createElement('span');
+            line.className = 'toc-line';
+            tocBtn.appendChild(line);
+
+            // Aksi klik: Meluncur halus ke posisi bab bersangkutan
+            tocBtn.addEventListener('click', () => {
+                heading.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            floatingToc.appendChild(tocBtn);
+        });
+
+        // Pantau posisi scroll untuk menandai garis bab yang aktif
+        initScrollSpy(headings);
     }
+
+    function initScrollSpy(headings) {
+        const tocButtons = document.querySelectorAll('.floating-toc .toc-btn');
+
+        window.addEventListener('scroll', () => {
+            let currentActiveIndex = 0;
+            const scrollPos = window.scrollY + 100;
+
+            headings.forEach((heading, idx) => {
+                if (scrollPos >= heading.offsetTop) {
+                    currentActiveIndex = idx;
+                }
+            });
+
+            tocButtons.forEach((btn, idx) => {
+                btn.classList.toggle('active', idx === currentActiveIndex);
+            });
+        });
+    }
+
+    // Jalankan TOC
+    renderTableOfContents();
 
     // ==========================================================================
     // 3. INTERAKSI TOMBOL REAKSI (LIKE & COMMENT)
@@ -145,27 +182,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnLike) {
         btnLike.addEventListener('click', () => {
             btnLike.classList.toggle('liked');
-            const isLiked = btnLike.classList.contains('liked');
-            console.log(isLiked ? "Artikel disukai ❤️" : "Batal menyukai artikel");
         });
     }
 
     if (btnComment) {
         btnComment.addEventListener('click', () => {
-            alert("Fitur komentar akan segera hadir!");
-        });
-    }
-
-    // ==========================================================================
-    // 4. INTERAKSI DAFTAR ISI MELAYANG (TABLE OF CONTENTS)
-    // ==========================================================================
-    const floatingToc = document.getElementById('floatingToc');
-    if (floatingToc) {
-        floatingToc.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            alert('Fitur komentar akan segera hadir!');
         });
     }
 });

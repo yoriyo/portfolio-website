@@ -64,35 +64,52 @@ body {
    3. FLOATING ELEMENTS (TERKUNCI DI TENGAH VERTIKAL / FIXED)
    ========================================================================== */
 
-/* TOC di Margin Kiri (Ketentuan 12) */
+/* TOC di Margin Kiri (Default tersembunyi, muncul via JS jika bab >= 3) */
 .floating-toc {
     position: fixed;
     left: max(var(--page-margin), calc((100vw - var(--max-content-width)) / 2 + var(--page-margin)));
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
-    cursor: pointer;
-}
-
-.toc-lines {
-    display: flex;
+    display: none; /* Muncul jika bab >= 3 */
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
 }
 
+/* Tombol pembungkus garis agar area klik mudah ditekan */
+.toc-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 6px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Hanya Garis Panjang (Ketentuan Baru) */
 .toc-line {
     display: block;
-    height: 1.5px;
-    background-color: #888888;
+    width: 48px;
+    height: 2.5px;
+    background-color: #b0b0b0;
     border-radius: 2px;
+    transition: background-color 0.2s ease, width 0.25s ease;
 }
 
-.toc-line.line-1 { width: 52px; }
-.toc-line.line-2 { width: 42px; }
-.toc-line.line-3 { width: 36px; }
-.toc-line.line-4 { width: 52px; }
+/* Efek saat garis disorot atau sedang aktif dibaca */
+.toc-btn:hover .toc-line {
+    background-color: #333333;
+    width: 56px;
+}
 
-/* Ikon Hati & Komentar di Margin Kanan (Ketentuan 12 & 13) */
+.toc-btn.active .toc-line {
+    background-color: #111111;
+    width: 56px;
+    height: 3px;
+}
+
+/* Ikon Hati & Komentar di Margin Kanan */
 .floating-actions {
     position: fixed;
     right: max(var(--page-margin), calc((100vw - var(--max-content-width)) / 2 + var(--page-margin)));
@@ -100,7 +117,7 @@ body {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Ketentuan 13 */
+    gap: 16px;
     z-index: 100;
 }
 
@@ -124,13 +141,28 @@ body {
 .action-icon {
     width: 24px;
     height: 24px;
+    display: block;
 }
 
+/* Warna saat tombol suka (like) aktif */
 .action-btn.liked {
     color: #e63946;
 }
-.action-btn.liked svg {
+
+.action-btn.liked .icon-heart {
     fill: #e63946;
+    stroke: #e63946;
+}
+
+/* ==========================================================================
+   STYLE SUB-JUDUL BAB DI DALAM ARTIKEL
+   ========================================================================== */
+.article-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222222;
+    margin: 28px 0 12px 0;
+    scroll-margin-top: 40px; /* Jarak aman agar judul bab tidak mepet atas saat di-scroll */
 }
 
 /* ==========================================================================
