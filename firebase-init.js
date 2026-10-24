@@ -1,6 +1,6 @@
 // Impor fungsi yang dibutuhkan dari Firebase Modular CDN
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,8 +20,8 @@ const db = getFirestore(app);
 async function testAmbilData() {
   try {
     const querySnapshot = await getDocs(collection(db, "highlights"));
-    querySnapshot.forEach((doc) => {
-      console.log("Data Firebase berhasil terbaca:", doc.id, " => ", doc.data());
+    querySnapshot.forEach((docSnap) => {
+      console.log("Data Firebase berhasil terbaca:", docSnap.id, " => ", docSnap.data());
     });
   } catch (error) {
     console.error("Gagal membaca database Firebase:", error);
@@ -31,4 +31,4 @@ async function testAmbilData() {
 // Jalankan fungsi tes
 testAmbilData();
 
-export { db };
+export { db, collection, getDocs, doc, getDoc };
