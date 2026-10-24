@@ -64,16 +64,9 @@ body {
    3. FLOATING ELEMENTS (TERKUNCI DI TENGAH VERTIKAL / FIXED)
    ========================================================================== */
 
-/* TOC di Margin Kiri (Default tersembunyi, muncul via JS jika bab >= 3) */
+/* TOC di Margin Kiri (Dinonaktifkan sementara) */
 .floating-toc {
-    position: fixed;
-    left: max(var(--page-margin), calc((100vw - var(--max-content-width)) / 2 + var(--page-margin)));
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
-    display: none; /* Muncul jika bab >= 3 */
-    flex-direction: column;
-    gap: 8px;
+    display: none !important;
 }
 
 /* Tombol pembungkus garis agar area klik mudah ditekan */
@@ -276,16 +269,10 @@ body {
 }
 
 /* ==========================================================================
-   7. AUTHOR BADGE (TERKUNCI SECARA VERTIKAL / FIXED)
+   7. AUTHOR BADGE (Dinonaktifkan sementara)
    ========================================================================== */
 .author-container {
-    position: fixed;
-    /* Selalu rata kiri lurus dengan kolom grid artikel di resolusi mana pun */
-    left: max(var(--page-margin), calc((100vw - var(--max-content-width)) / 2 + var(--page-margin)));
-    bottom: 40px;
-    z-index: 90;
-    display: flex;
-    align-items: center;
+    display: none !important;
 }
 
 .author-badge {

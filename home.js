@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
             tag_economy: "Ekonomi",
             articles_title: "Artikel Tambahan",
             btn_see_more: "Klik untuk selengkapnya",
-            side_desc_1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            side_desc_2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            side_desc_3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            side_desc_4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_5: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_6: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            side_desc_1: "Strategi Transformasi Bisnis dan Skalabilitas Startup Modern melalui pendekatan produk berbasis data.",
+            side_desc_2: "Denitions Metar Demor: Pola Sarapan Kaya Protein dan perbaikan metabolisme di pagi hari.",
+            side_desc_3: "Metodologi Riset Kritis dan Manajemen Referensi Ilmiah untuk penulisan karya komprehensif.",
+            side_desc_4: "Disrupsi Pembayaran Digital dan Inklusi Finansial: Akses permodalan ekosistem terbuka.",
+            article_desc_1: "Parloinal Brandr First Consume Narraition: Membangun loyalitas konsumen dan narasi otentik.",
+            article_desc_2: "The Word Gahfne In Nutrition Category: Eksplorasi nutrisi seimbang untuk kebugaran harian.",
+            article_desc_3: "How Defonates the Hour of Milllary Healthes: Pembelajaran dan refleksi karya sastra klasik.",
+            article_desc_4: "Refleksi Filosofi Stoikisme dalam Dinamika Kehidupan Modern: Menemukan ketenangan batin.",
+            article_desc_5: "Prinsip Termodinamika dalam Efisiensi Energi Terbarukan: Analisis siklus konversi panas.",
+            article_desc_6: "Mekanika Kuantum: Menguak Superposisi dan Komputasi Qubit untuk enkripsi masa depan."
         },
         en: {
             search_placeholder: "Search...",
@@ -39,82 +39,82 @@ document.addEventListener('DOMContentLoaded', () => {
             tag_economy: "Economy",
             articles_title: "Additional Articles",
             btn_see_more: "Click to see more",
-            side_desc_1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            side_desc_2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            side_desc_3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            side_desc_4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_5: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            article_desc_6: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            side_desc_1: "Business Transformation Strategy and Modern Startup Scaling through data-driven products.",
+            side_desc_2: "Denitions Metar Demor: High-Protein Breakfast Routine and morning metabolic optimization.",
+            side_desc_3: "Critical Research Methodologies and Academic Reference Workflow for comprehensive writing.",
+            side_desc_4: "Digital Payment Disruption and Financial Inclusion Expansion in open financial ecosystems.",
+            article_desc_1: "Parloinal Brandr First Consume Narraition: Building consumer loyalty and authentic narratives.",
+            article_desc_2: "The Word Gahfne In Nutrition Category: Exploring balanced nutrition for daily wellness.",
+            article_desc_3: "How Defonates the Hour of Milllary Healthes: Insights and reflections from classical literature.",
+            article_desc_4: "Reflections on Stoic Philosophy in Modern Daily Dynamics: Cultivating internal tranquility.",
+            article_desc_5: "Thermodynamic Principles in Renewable Energy Efficiency: Heat conversion cycle analysis.",
+            article_desc_6: "Quantum Mechanics: Unveiling Superposition and Qubit Computing for future encryption."
         }
     };
 
     // ==========================================
-    // 2. DATA CAROUSEL DWIBAHASA
+    // 2. DATA CAROUSEL DWIBAHASA (TERSINKRONISASI KATEGORI)
     // ==========================================
     const carouselData = [
         {
             tag: { id: "Bisnis", en: "Business" },
             tagUrl: "category.html?tag=business",
             title: {
-                id: "Singkat saja judul dari kegiatan Business",
-                en: "Brief title of the Business activity"
+                id: "Parloinal Brandr First Consume Narraition",
+                en: "Parloinal Brandr First Consume Narraition"
             },
-            image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=80",
-            projectUrl: "detail-business.html"
+            image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80",
+            projectUrl: "article.html?id=parloinal-brandr"
         },
         {
             tag: { id: "Nutrisi", en: "Nutrition" },
             tagUrl: "category.html?tag=nutrition",
             title: {
-                id: "Eksplorasi Nutrisi Seimbang & Pola Hidup Sehat",
-                en: "Exploring Balanced Nutrition & Healthy Lifestyle"
+                id: "The Word Gahfne In Nutrition Category",
+                en: "The Word Gahfne In Nutrition Category"
             },
-            image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=80",
-            projectUrl: "detail-nutrition.html"
+            image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80",
+            projectUrl: "article.html?id=asupan-15-hari"
         },
         {
             tag: { id: "Studi", en: "Study" },
             tagUrl: "category.html?tag=study",
             title: {
-                id: "Riset Pola Belajar Efektif & Produktivitas",
-                en: "Research on Effective Study Patterns & Productivity"
+                id: "How Many Themas Study: Teknik Belajar Efektif",
+                en: "How Many Themas Study: Effective Learning Methods"
             },
             image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=80",
-            projectUrl: "detail-study.html"
+            projectUrl: "article.html?id=how-many-themas-study"
         },
         {
             tag: { id: "Ekonomi", en: "Economy" },
             tagUrl: "category.html?tag=economy",
             title: {
-                id: "Analisis Makroekonomi & Tren Pasar Terkini",
-                en: "Macroeconomic Analysis & Current Market Trends"
+                id: "Coretonsacoat: Analisis Makroekonomi & Tren Pasar Modal",
+                en: "Coretonsacoat: Macroeconomic Trends and Market Insights"
             },
             image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80",
-            projectUrl: "detail-economy.html"
+            projectUrl: "article.html?id=coretonsacoat-economy"
         },
         {
             tag: { id: "Fisika", en: "Physics" },
             tagUrl: "category.html?tag=physics",
             title: {
-                id: "Eksperimen & Pemodelan Simulasi Fisika Terapan",
-                en: "Experiments & Applied Physics Simulation Modeling"
+                id: "Prinsip Termodinamika dalam Efisiensi Energi Terbarukan",
+                en: "Thermodynamic Principles in Renewable Energy Efficiency"
             },
             image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&w=1000&q=80",
-            projectUrl: "detail-physics.html"
+            projectUrl: "article.html?id=thermodynamics-energy"
         },
         {
-            tag: { id: "Buku", en: "Book" },
-            tagUrl: "category.html?tag=book",
+            tag: { id: "Buku", en: "Books" },
+            tagUrl: "category.html?tag=books",
             title: {
-                id: "Kajian Kritis & Resume Buku Pilihan Minggu Ini",
-                en: "Critical Review & Book Summary of the Week"
+                id: "How Defonates the Hour of Milllary Healthes",
+                en: "How Defonates the Hour of Milllary Healthes"
             },
             image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=80",
-            projectUrl: "detail-book.html"
+            projectUrl: "article.html?id=defonates-hour-milllary"
         }
     ];
 
