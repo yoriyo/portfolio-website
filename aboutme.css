@@ -196,7 +196,7 @@ body {
     justify-content: space-between;
     gap: 60px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
     padding: 0 40px;
 }
 
@@ -318,12 +318,100 @@ body {
     border-radius: 50%;
 }
 
+/* =========================================
+   3. SECTION PROJECTS & AUTO LAYOUT CARDS
+   ========================================= */
+.projects-section,
+.projects {
+    max-width: 1200px;
+    margin: 64px auto 96px auto; /* 64px di bawah garis konten intro */
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Teks & Icon Panah */
+.project-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.projects-title,
+.project-arrow p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 16px; /* Jarak 16px setelah tulisan ke arrow */
+    line-height: 1.4;
+}
+
+.project-arrow img,
+#projectArrow {
+    width: 30px;
+    height: 52px;
+    display: block;
+    margin-bottom: 64px; /* Space 64px antara panah dengan card */
+}
+
+/* Auto Layout Cards Container dengan Gap 32px */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px; /* Auto layout dengan gap 32px antar card */
+    width: 100%;
+}
+
+/* Style Card: project1, project2, project3 */
+.project-card,
+.project1,
+.project2,
+.project3 {
+    flex: 1;
+    max-width: 340px;
+    min-width: 260px;
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    padding: 20px 20px 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Placeholder Thumbnail di Bagian Atas Card */
+.project-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 150px;
+    background-color: #8c7b7e;
+    border-radius: 14px;
+}
+
+/* Teks Nama Project */
+.project-name {
+    margin-top: 24px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+}
+
 /* Responsif untuk Layar Tablet & Mobile */
 @media (max-width: 900px) {
     .hero-intro {
         flex-direction: column-reverse;
         gap: 32px;
-        margin: 24px auto;
+        margin: 24px auto 0 auto;
         padding: 0 24px;
         text-align: center;
     }
@@ -335,5 +423,24 @@ body {
 
     .skills-container {
         justify-content: center;
+    }
+
+    .projects-section,
+    .projects {
+        margin-top: 48px;
+        padding: 0 24px;
+    }
+
+    .projects-container {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .project-card,
+    .project1,
+    .project2,
+    .project3 {
+        max-width: 100%;
+        width: 100%;
     }
 }

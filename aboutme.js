@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_greeting: "Halo, saya Ilham. Senang bertemu denganmu",
             hero_title: "Saya hanya orang yang suka membagikan apa pun yang saya pelajari, sukai, dan cintai.",
             skills_label: "Keahlian yang saya miliki:",
-            contact_label: "Tanyakan apa saja:"
+            contact_label: "Tanyakan apa saja:",
+            projects_heading: "Check my other projects below"
         },
         en: {
             search_placeholder: "Search...",
@@ -22,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_greeting: "Hi, I'm Ilham. Nice to meet you",
             hero_title: "I'm just a guy who likes to share anything i learn, i like, and i love.",
             skills_label: "Skills i have:",
-            contact_label: "Ask me anything:"
+            contact_label: "Ask me anything:",
+            projects_heading: "Check my other projects below"
         }
     };
 
