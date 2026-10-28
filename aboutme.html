@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya - Ilham's Website</title>
+
+    <!-- 1. Google Font: Open Sans (Ketentuan 1) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet khusus about me -->
+    <link rel="stylesheet" href="aboutme.css">
+
+    <!-- Script logika dinamis navbar & interaksi -->
+    <script src="aboutme.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR (PERSIS SESUAI PROYEK) ================= -->
+    <header class="navbar">
+        <form class="search-pill" id="searchForm">
+            <button type="submit" class="search-btn" aria-label="Cari">
+                <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <input type="text" id="searchInput" name="q" placeholder="Cari..."
+                data-lang-placeholder="search_placeholder" autocomplete="off">
+        </form>
+
+        <nav class="nav-links">
+            <a href="index.html" data-lang-key="nav_home">Beranda</a>
+            <a href="aboutme.html" class="active" data-lang-key="nav_about">Tentang Saya</a>
+            <a href="category.html" data-lang-key="nav_category">Kategori</a>
+        </nav>
+
+        <!-- Tombol Pengalih Bahasa -->
+        <div class="lang-pill id-active" id="langToggle">
+            <div class="lang-slider"></div>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn active" data-lang="id">ID</button>
+        </div>
+    </header>
+
+    <section class="hero-intro">
+        <!-- Kolom Kiri: Teks & Keterangan -->
+        <div class="intro-left">
+            <div class="hero-text">
+                <p class="hero-greeting" data-lang-key="hero_greeting">Hi, I'm Ilham. Nice to meet you</p>
+                <h1 class="hero-title" data-lang-key="hero_title">I'm a guy who likes to share anything i learn, i like, and i love.</h1>
+            </div>
+
+            <!-- Bagian Skills -->
+            <div class="skills-section">
+                <p class="section-label" data-lang-key="skills_label">Skills i have:</p>
+                <div class="skills-container">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-divider"></span>
+                    <span class="skill-pill">Figma</span>
+                    <span class="skill-divider"></span>
+                    <span class="skill-pill">Excel</span>
+                    <span class="skill-divider"></span>
+                    <span class="skill-pill">SQL</span>
+                </div>
+            </div>
+
+            <!-- Bagian Kontak -->
+            <div class="contact-section">
+                <p class="section-label" data-lang-key="contact_label">Ask me anything:</p>
+                <div class="gmail">
+                    <img src="Icons/Gmail Icon.svg" alt="Gmail">
+                    <p>ilrasyid5@gmail.com</p>
+                </div>
+                <div class="insta">
+                    <img src="Icons/Insta icon.svg" alt="Instagram">
+                    <p>@ilrasy.id</p>
+                </div>
+                <!-- Item kontak -->
+            </div>
+        </div>
+
+        <!-- Kolom Kanan: Lingkaran Profil -->
+        <div class="intro-right">
+            <div class="profile-circle">
+                <img src="Images/20260729_001256.jpg" alt="Profile" id="profileImg">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
