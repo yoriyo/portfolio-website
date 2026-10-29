@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ilham's portfolio website</title>
     <meta name="description" content="Contains all about Ilham Rasyid Machfudi's all works">
 
-    <!-- 1. Muat Google Font Open Sans agar seragam dengan article.html -->
+    <!-- 1. Muat Google Font Open Sans agar seragam dengan article.html & home.html -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- 2. Perbaikan nama file CSS sesuai berkas lokal -->
-    <link rel="stylesheet" href="home.css">
+    <!-- 2. Berkas CSS Landing Page -->
+    <link rel="stylesheet" href="index.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- 3. Perbaikan nama file JS sesuai berkas lokal -->
-    <script src="home.js" defer></script>
+    <!-- 3. Berkas JavaScript Landing Page -->
+    <script src="index.js" defer></script>
 
     <!-- 4. Modul Database Firebase -->
     <script type="module" src="firebase-init.js"></script>
 </head>
-
 <body>
-
+    
+    <!-- Header / Navbar di atas sejajar: link di kiri, pengalih bahasa di kanan -->
     <header class="navbar">
-        <form class="search-pill" id="searchForm">
-            <button type="submit" class="search-btn" aria-label="Cari">
-                <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
-            <input type="text" id="searchInput" name="q" placeholder="Cari..." data-lang-placeholder="search"
-                autocomplete="off">
-        </form>
-
         <nav class="nav-links">
-            <a href="index.html" class="active" data-lang-key="nav_home">Beranda</a>
+            <a href="home.html" data-lang-key="nav_home">Beranda</a>
             <a href="aboutme.html" data-lang-key="nav_about">Tentang Saya</a>
             <a href="category.html" data-lang-key="nav_category">Kategori</a>
         </nav>
 
-        <!-- Tambahkan id-active di HTML agar slider langsung di posisi ID tanpa kedip -->
+        <!-- Tombol Pengalih Bahasa (Sejajar di kanan atas) -->
         <div class="lang-pill id-active" id="langToggle">
             <div class="lang-slider"></div>
             <button type="button" class="lang-btn" data-lang="en">EN</button>
@@ -53,190 +40,26 @@
         </div>
     </header>
 
-    <!-- ================= KONTEN UTAMA ================= -->
-    <main class="main-container">
+    <!-- Hero Section: Terbagi 3 grup, terpusat di tengah layar -->
+    <section class="hero">
+        <!-- Grup 1: Display Text Sambutan & Keterangan (gap 4px) -->
+        <div class="display-text">
+            <p class="sambutan" id="sambutan" data-lang-key="hero_welcome">Welcome to my Website</p>
+            <p class="keterangan" id="keterangan" data-lang-key="hero_desc">Melalui website ini kalian akan saya suguhkan hal-hal yang menarik bagi saya di dunia</p>
+        </div>
 
-        <!-- SECTION 1: CAROUSEL PREVIEW & SIDEBAR -->
-        <section class="top-section">
+        <!-- Grup 2: CTA Start & Tulisan Admin (gap 80px ke atas dan ke bawah) -->
+        <div class="cta-wrapper">
+            <button type="button" class="start" id="startBtn">START</button>
+            <a href="home.html" class="admin-link" id="adminBtn">admin</a>
+        </div>
 
-            <!-- Kolom Kiri: Banner Carousel Preview Utama -->
-            <div class="featured-card" id="carouselCard" title="Klik untuk membuka detail kegiatan">
-                <img id="carouselImg"
-                    src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80"
-                    alt="Preview Kegiatan">
-
-                <div class="featured-content">
-                    <a href="category.html?tag=business" id="carouselTag" class="badge-tag">Bisnis</a>
-                    <h2 id="carouselTitle" class="featured-title">Parloinal Brandr First Consume Narraition</h2>
-
-                    <div class="dots-container" id="carouselDots">
-                        <button type="button" class="dot active" data-index="0" aria-label="Halaman 1"></button>
-                        <button type="button" class="dot" data-index="1" aria-label="Halaman 2"></button>
-                        <button type="button" class="dot" data-index="2" aria-label="Halaman 3"></button>
-                        <button type="button" class="dot" data-index="3" aria-label="Halaman 4"></button>
-                        <button type="button" class="dot" data-index="4" aria-label="Halaman 5"></button>
-                        <button type="button" class="dot" data-index="5" aria-label="Halaman 6"></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kolom Kanan: Cek Portofolio Lainnya -->
-            <div class="side-portfolio">
-                <h2 class="section-title" data-lang-key="side_title">Cek Portofolio saya lainnya</h2>
-
-                <div class="side-list">
-                    <!-- Konten 1: Business -->
-                    <article class="side-item">
-                        <a href="article.html?id=digital-business-scaling" class="side-thumb">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80"
-                                alt="Thumbnail 1">
-                        </a>
-                        <div class="side-info">
-                            <a href="article.html?id=digital-business-scaling" class="side-text-link">
-                                <p data-lang-key="side_desc_1">Strategi Transformasi Bisnis dan Skalabilitas Startup
-                                    Modern melalui pendekatan produk berbasis data.</p>
-                            </a>
-                            <a href="category.html?tag=business" class="badge-dark"
-                                data-lang-key="tag_business">Bisnis</a>
-                        </div>
-                    </article>
-
-                    <!-- Konten 2: Nutrition -->
-                    <article class="side-item">
-                        <a href="article.html?id=denitions-metar-demor" class="side-thumb">
-                            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=200&q=80"
-                                alt="Thumbnail 2">
-                        </a>
-                        <div class="side-info">
-                            <a href="article.html?id=denitions-metar-demor" class="side-text-link">
-                                <p data-lang-key="side_desc_2">Denitions Metar Demor: Pola Sarapan Kaya Protein dan
-                                    perbaikan metabolisme di pagi hari.</p>
-                            </a>
-                            <a href="category.html?tag=nutrition" class="badge-dark"
-                                data-lang-key="tag_nutrition">Nutrisi</a>
-                        </div>
-                    </article>
-
-                    <!-- Konten 3: Study -->
-                    <article class="side-item">
-                        <a href="article.html?id=academic-research-framework" class="side-thumb">
-                            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=200&q=80"
-                                alt="Thumbnail 3">
-                        </a>
-                        <div class="side-info">
-                            <a href="article.html?id=academic-research-framework" class="side-text-link">
-                                <p data-lang-key="side_desc_3">Metodologi Riset Kritis dan Manajemen Referensi Ilmiah
-                                    untuk penulisan karya komprehensif.</p>
-                            </a>
-                            <a href="category.html?tag=study" class="badge-dark" data-lang-key="tag_study">Studi</a>
-                        </div>
-                    </article>
-
-                    <!-- Konten 4: Economy -->
-                    <article class="side-item">
-                        <a href="article.html?id=fintech-disruption-future" class="side-thumb">
-                            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=200&q=80"
-                                alt="Thumbnail 4">
-                        </a>
-                        <div class="side-info">
-                            <a href="article.html?id=fintech-disruption-future" class="side-text-link">
-                                <p data-lang-key="side_desc_4">Disrupsi Pembayaran Digital dan Inklusi Finansial: Akses
-                                    permodalan ekosistem terbuka.</p>
-                            </a>
-                            <a href="category.html?tag=economy" class="badge-dark"
-                                data-lang-key="tag_economy">Ekonomi</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: ARTIKEL TAMBAHAN -->
-        <section class="articles-section">
-            <h2 class="section-title" data-lang-key="articles_title">Artikel Tambahan</h2>
-
-            <div class="articles-grid">
-                <!-- Kolom Kiri -->
-                <div class="articles-column">
-                    <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=200&q=80"
-                            alt="Artikel 1">
-                        <div class="article-info">
-                            <p data-lang-key="article_desc_1">Parloinal Brandr First Consume Narraition: Membangun
-                                loyalitas konsumen dan narasi otentik.</p>
-                            <a href="article.html?id=parloinal-brandr" class="btn-more"
-                                data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=200&q=80"
-                            alt="Artikel 2">
-                        <div class="article-info">
-                            <p data-lang-key="article_desc_2">The Word Gahfne In Nutrition Category: Eksplorasi nutrisi
-                                seimbang untuk kebugaran harian.</p>
-                            <a href="article.html?id=asupan-15-hari" class="btn-more" data-lang-key="btn_see_more">Klik
-                                untuk selengkapnya</a>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80"
-                            alt="Artikel 3">
-                        <div class="article-info">
-                            <p data-lang-key="article_desc_3">How Defonates the Hour of Milllary Healthes: Pembelajaran
-                                dan refleksi karya sastra klasik.</p>
-                            <a href="article.html?id=defonates-hour-milllary" class="btn-more"
-                                data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Kolom Kanan -->
-                <div class="articles-column">
-                    <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=200&q=80"
-                            alt="Artikel 4">
-                        <div class="article-info">
-                            <p data-lang-key="article_desc_4">Refleksi Filosofi Stoikisme dalam Dinamika Kehidupan
-                                Modern: Menemukan ketenangan batin.</p>
-                            <a href="article.html?id=essential-growth-reads" class="btn-more"
-                                data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&w=200&q=80"
-                            alt="Artikel 5">
-                        <div class="article-info">
-                            <p data-lang-key="article_desc_5">Prinsip Termodinamika dalam Efisiensi Energi Terbarukan:
-                                Analisis siklus konversi panas.</p>
-                            <a href="article.html?id=thermodynamics-energy" class="btn-more"
-                                data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=200&q=80"
-                            alt="Artikel 6">
-                        <div class="article-info">
-                            <p data-lang-key="article_desc_6">Mekanika Kuantum: Menguak Superposisi dan Komputasi Qubit
-                                untuk enkripsi masa depan.</p>
-                            <a href="article.html?id=quantum-mechanics-future" class="btn-more"
-                                data-lang-key="btn_see_more">Klik untuk selengkapnya</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <p>&copy; 2026</p>
-    </footer>
+        <!-- Grup 3: Teks Tambahan (gap 4px antar paragraf) -->
+        <div class="tambahan">
+            <p class="tambahan-p" data-lang-key="hero_credit_1">fully designed by Ilham for his interests</p>
+            <p class="tambahan-p" data-lang-key="hero_credit_2">with the help of AI and internet for the codes and deployment</p>
+        </div>
+    </section>
 
 </body>
-
 </html>
